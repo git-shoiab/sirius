@@ -1,5 +1,5 @@
 package sirius;
-
+//SEVENT EXERCISE
 import java.util.Scanner;
 
 public class ConditionDemo {

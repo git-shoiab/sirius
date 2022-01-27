@@ -1,5 +1,5 @@
 package sirius;
-
+//FOURTH EXERCISE
 public class TypeCastingDemo {
 	public static void main(String[] args) {
 		long l=100;//64 bit

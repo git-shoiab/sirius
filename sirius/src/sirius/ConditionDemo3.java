@@ -1,5 +1,5 @@
 package sirius;
-
+//NINTH EXERCISE
 public class ConditionDemo3 {
 	public static void main(String[] args) {
 		int day=4;

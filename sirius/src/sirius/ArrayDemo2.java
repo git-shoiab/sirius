@@ -1,5 +1,5 @@
 package sirius;
-
+//SIXTH EXERCISE
 public class ArrayDemo2 {
 	public static void main(String[] args) {
 		//DOUBLE DIMENSIONAL ARRAY

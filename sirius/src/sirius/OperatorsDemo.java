@@ -1,5 +1,5 @@
 package sirius;
-
+//SECOND EXERCISE
 public class OperatorsDemo {
 	public static void main(String[] args) {
 		//1. Arithmetic operators  2. Logical operators  3. Relational Operators
