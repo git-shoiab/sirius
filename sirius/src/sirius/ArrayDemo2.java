@@ -26,7 +26,7 @@ public class ArrayDemo2 {
 		//UNEVEN MULTI DIMENSIONAL ARRAY
 		
 		int twodue[][]=new int[3][];
-		
+		//Can you please repeat this un even multidimensional array once - I did not understood the column part
 		twodue[0]=new int[2];
 		twodue[1]=new int[4];
 		twodue[2]=new int[1];
