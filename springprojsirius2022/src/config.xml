@@ -16,9 +16,54 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	
 </bean>
 
-<bean id="shop" class="springprojsirius2022.SiriusShoeShop">
-	<property name="factory">
+<bean id="shop" class="springprojsirius2022.SiriusShoeShop" 
+	scope="singleton"
+	init-method="startup"
+	destroy-method="closeup"
+	
+	autowire="constructor"
+	>
+	<!-- <constructor-arg>
 		<ref bean="factory123"/>
+	</constructor-arg> -->
+	<!-- <property name="factory">
+		<ref bean="factory123"/>
+	</property> -->
+	
+	<property name="name">
+		<value>this is value passed by xml...</value>
+	</property>
+	
+	<property name="list">
+		<list>
+			<ref bean="factory123"/>
+			<value>hello list...</value>
+		</list>
+	</property>
+	
+	<property name="set">
+		<set>
+			<ref bean="factory123"/>
+			<value>hello list...</value>
+		</set>
+	</property>
+	
+	<property name="map">
+		<map>
+		<entry key="k1">
+			<ref bean="factory123"/>
+		</entry>
+		<entry key="k2">
+			<value>hello list...</value>
+		</entry>
+		</map>
+	</property>
+	
+	<property name="prop">
+		<props>
+		<prop key="k1">factory123</prop>
+		<prop key="k2">hello list...</prop>
+		</props>
 	</property>
 </bean>
 
