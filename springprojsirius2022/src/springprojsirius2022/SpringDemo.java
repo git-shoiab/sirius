@@ -31,6 +31,9 @@ public class SpringDemo {
 		
 		shop.test();
 		
+		Exporter exporter=(Exporter)shop;
+		exporter.doExport();
+		
 		shop=ctx.getBean("shop",ShoeShop.class);
 		shop=ctx.getBean("shop",ShoeShop.class);
 		shop=ctx.getBean("shop",ShoeShop.class);

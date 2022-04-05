@@ -80,7 +80,10 @@ class="springprojsirius2022.LakhaniShoeFactory"
 
 <bean id="advisedshop" class="org.springframework.aop.framework.ProxyFactoryBean">
 	<property name="proxyInterfaces">
+	<list>
 		<value>springprojsirius2022.Seller</value>
+		<value>springprojsirius2022.Exporter</value>
+	</list>
 	</property>
 
 	<property name="interceptorNames">
@@ -89,6 +92,7 @@ class="springprojsirius2022.LakhaniShoeFactory"
 		<value>pointcut2</value>
 		<value>pointcut3</value>
 		<value>pointcut4</value>
+		<value>exportAdvice</value>
 	</list>
 	</property>
 	

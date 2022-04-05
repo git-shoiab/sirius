@@ -31,6 +31,14 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	<property name="mappedName"><value>sell*</value></property>
 	<property name="advice"><ref bean="radvice"/></property>
 </bean>	
+
+<bean id="export" class="springprojsirius2022.ExporterImpl"/>
+
+<bean id="exportAdvice" class="org.springframework.aop.support.DefaultIntroductionAdvisor" scope="prototype">
+	<constructor-arg>
+		<ref bean="export"/>
+	</constructor-arg>
+</bean>
 </beans>
 
 
