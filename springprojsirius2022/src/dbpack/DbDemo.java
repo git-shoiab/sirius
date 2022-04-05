@@ -1,8 +1,10 @@
 package dbpack;
 //ConfigurableApplicationContext ctx=new ClassPathXmlApplicationContext("config.xml");
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 
 import javax.sql.DataSource;
 
@@ -33,6 +35,18 @@ public class DbDemo {
 		User user=jdbc.queryForObject("select * from users where uid=?", new Object[] {1},new MyRowMapper());
 		
 		System.out.println(user);
+		
+		Connection con=ds.getConnection();
+		
+		con.setAutoCommit(false);
+		//st1
+		Savepoint sp= con.setSavepoint("aa");
+		//st2
+		//st3
+		//con.commit();
+		con.rollback(sp);
+		con.commit();
+		
 	}
 }
 class MyRowMapper implements RowMapper<User>
