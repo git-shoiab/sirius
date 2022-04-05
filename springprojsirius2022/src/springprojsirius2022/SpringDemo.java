@@ -24,6 +24,7 @@ public class SpringDemo {
 		customer.setName("ramu");
 		
 		System.out.println(shop.sellShoe(customer));
+		shop.sellShoe(customer);
 		
 		shop=ctx.getBean("shop",ShoeShop.class);
 		shop=ctx.getBean("shop",ShoeShop.class);

@@ -74,13 +74,22 @@ class="springprojsirius2022.LakhaniShoeFactory"
 </bean>
 
 <bean id="wadvice" class="springprojsirius2022.WelcomeAdvice"/>
+<bean id="eadvice" class="springprojsirius2022.MyExceptionAdvice"/>
+<bean id="aadvice" class="springprojsirius2022.AroundAdvice"/>
+<bean id="radvice" class="springprojsirius2022.AfterAdvice"/>
+
 <bean id="advisedshop" class="org.springframework.aop.framework.ProxyFactoryBean">
 	<property name="proxyInterfaces">
 		<value>springprojsirius2022.Seller</value>
 	</property>
 
 	<property name="interceptorNames">
+	<list>
 		<value>wadvice</value>
+		<value>eadvice</value>
+		<value>aadvice</value>
+		<value>radvice</value>
+	</list>
 	</property>
 	
 	<property name="target">
