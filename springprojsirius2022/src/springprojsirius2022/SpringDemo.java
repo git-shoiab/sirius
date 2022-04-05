@@ -12,6 +12,8 @@ import java.util.Set;
 
 //https://fluvid.com/videos/detail/zj4k_TvmQBFgjj7P8#.YkvR1CrzGKY.link
 
+//https://fluvid.com/videos/detail/XLE5Zc7rxmT6GGnoq#.YkvWxJwY3aI.link
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -25,7 +27,9 @@ public class SpringDemo {
 		customer.setName("ramu");
 		
 		System.out.println(shop.sellShoe(customer));
-		shop.sellShoe(customer);
+		//shop.sellShoe(customer);
+		
+		shop.test();
 		
 		shop=ctx.getBean("shop",ShoeShop.class);
 		shop=ctx.getBean("shop",ShoeShop.class);
@@ -66,6 +70,7 @@ abstract class ShoeFactory implements Manufacturer{
 }
 interface Seller{
 	public Shoe sellShoe(Customer customer);
+	public void test();
 }
 abstract class ShoeShop implements Seller{
 	private ShoeFactory factory;
@@ -176,5 +181,9 @@ class SiriusShoeShop extends ShoeShop{
 	}
 	public void closeup() {
 		System.out.println("destroy method called...");
+	}
+	@Override
+	public void test() {
+		System.out.println("test method called....");
 	}
 }

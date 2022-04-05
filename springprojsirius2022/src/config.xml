@@ -13,7 +13,7 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 <!-- bean class="springprojsirius2022.MyBeanProcessor"/ -->
-
+<import resource="config2.xml"/>
 <bean id="factory123" 
 class="springprojsirius2022.LakhaniShoeFactory"
 
@@ -85,10 +85,10 @@ class="springprojsirius2022.LakhaniShoeFactory"
 
 	<property name="interceptorNames">
 	<list>
-		<value>wadvice</value>
-		<value>eadvice</value>
-		<value>aadvice</value>
-		<value>radvice</value>
+		<value>pointcut1</value>
+		<value>pointcut2</value>
+		<value>pointcut3</value>
+		<value>pointcut4</value>
 	</list>
 	</property>
 	
