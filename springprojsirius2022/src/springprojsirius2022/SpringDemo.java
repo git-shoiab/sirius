@@ -14,14 +14,16 @@ public class SpringDemo {
 	public static void main(String[] args)throws Exception {
 		ConfigurableApplicationContext ctx=new ClassPathXmlApplicationContext("config.xml");
 		
-//		//ShoeShop shop=ChennaiContainer.getShoeShop();
-//		ShoeShop shop=ctx.getBean("shop",ShoeShop.class);
-//				
-//		System.out.println(shop.sellShoe());
-//		
-//		shop=ctx.getBean("shop",ShoeShop.class);
-//		shop=ctx.getBean("shop",ShoeShop.class);
-//		shop=ctx.getBean("shop",ShoeShop.class);
+		//ShoeShop shop=ChennaiContainer.getShoeShop();
+		Seller shop=ctx.getBean("advisedshop",Seller.class);
+		Customer customer=new Customer();
+		customer.setName("ramu");
+		
+		System.out.println(shop.sellShoe(customer));
+		
+		shop=ctx.getBean("shop",ShoeShop.class);
+		shop=ctx.getBean("shop",ShoeShop.class);
+		shop=ctx.getBean("shop",ShoeShop.class);
 //		System.out.println(shop.name);
 //		System.out.println(shop.getList());
 //		System.out.println(shop.getSet());
@@ -30,7 +32,18 @@ public class SpringDemo {
 		ctx.close();
 	}
 }
+class Customer {
+	private String name;
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}
 abstract class Shoe{}
 
 class LeatherShoe extends Shoe{}
@@ -46,7 +59,7 @@ abstract class ShoeFactory implements Manufacturer{
 	}
 }
 interface Seller{
-	public Shoe sellShoe();
+	public Shoe sellShoe(Customer customer);
 }
 abstract class ShoeShop implements Seller{
 	private ShoeFactory factory;
@@ -148,7 +161,7 @@ class SiriusShoeShop extends ShoeShop{
 		System.out.println("shoe shop cons called..factory param cons called..");		
 	}
 	@Override
-	public Shoe sellShoe() {
+	public Shoe sellShoe(Customer customer) {
 		// TODO Auto-generated method stub
 		return getFactory().makeShoe();
 	}

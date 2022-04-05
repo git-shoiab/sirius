@@ -2,6 +2,7 @@ package springprojsirius2022;
 
 import java.lang.reflect.Field;
 
+import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
