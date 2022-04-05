@@ -14,19 +14,19 @@ public class SpringDemo {
 	public static void main(String[] args)throws Exception {
 		ConfigurableApplicationContext ctx=new ClassPathXmlApplicationContext("config.xml");
 		
-		//ShoeShop shop=ChennaiContainer.getShoeShop();
-		ShoeShop shop=ctx.getBean("shop",ShoeShop.class);
-				
-		System.out.println(shop.sellShoe());
-		
-		shop=ctx.getBean("shop",ShoeShop.class);
-		shop=ctx.getBean("shop",ShoeShop.class);
-		shop=ctx.getBean("shop",ShoeShop.class);
-		System.out.println(shop.name);
-		System.out.println(shop.getList());
-		System.out.println(shop.getSet());
-		System.out.println(shop.getMap());
-		System.out.println(shop.getProp());
+//		//ShoeShop shop=ChennaiContainer.getShoeShop();
+//		ShoeShop shop=ctx.getBean("shop",ShoeShop.class);
+//				
+//		System.out.println(shop.sellShoe());
+//		
+//		shop=ctx.getBean("shop",ShoeShop.class);
+//		shop=ctx.getBean("shop",ShoeShop.class);
+//		shop=ctx.getBean("shop",ShoeShop.class);
+//		System.out.println(shop.name);
+//		System.out.println(shop.getList());
+//		System.out.println(shop.getSet());
+//		System.out.println(shop.getMap());
+//		System.out.println(shop.getProp());
 		ctx.close();
 	}
 }
@@ -37,6 +37,7 @@ class LeatherShoe extends Shoe{}
 class SportsShoe extends Shoe{}
 
 interface Manufacturer{
+	
 	public Shoe makeShoe();
 }
 abstract class ShoeFactory implements Manufacturer{
@@ -114,6 +115,7 @@ abstract class ShoeShop implements Seller{
 }
 
 class BataShoeFactory extends ShoeFactory{
+	public static String mysign="blablabla";
 	public BataShoeFactory() {
 		// TODO Auto-generated constructor stub
 	}
@@ -123,6 +125,8 @@ class BataShoeFactory extends ShoeFactory{
 	}
 }
 class LakhaniShoeFactory extends ShoeFactory{
+	public static String mysign="bababababa";
+
 	public LakhaniShoeFactory() {
 		// TODO Auto-generated constructor stub
 	}
@@ -133,7 +137,8 @@ class LakhaniShoeFactory extends ShoeFactory{
 }
 
 class SiriusShoeShop extends ShoeShop{
-	
+	public static String mysign="kavakavakva";
+
 	public SiriusShoeShop() {
 		System.out.println("shoe shop cons called....");
 	}

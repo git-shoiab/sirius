@@ -11,8 +11,11 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+<bean class="springprojsirius2022.MyBeanProcessor"/>
+<bean id="factory123" 
+class="springprojsirius2022.LakhaniShoeFactory"
 
-<bean id="factory123" class="springprojsirius2022.LakhaniShoeFactory">
+>
 	
 </bean>
 
@@ -22,6 +25,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	destroy-method="closeup"
 	
 	autowire="constructor"
+	
 	>
 	<!-- <constructor-arg>
 		<ref bean="factory123"/>
