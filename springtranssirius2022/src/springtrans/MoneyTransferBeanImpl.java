@@ -13,16 +13,16 @@ public class MoneyTransferBeanImpl implements MoneyTransferBean {
 	@Override
 	public void doCredit(int craccid, int amt) throws Exception {
 		JdbcTemplate jdbc=new JdbcTemplate(dataSource);;
-		Integer oldamount=jdbc.queryForObject("select amount from accounts where accid=?", new Object[] {craccid},Integer.class);
+		Integer oldamount=jdbc.queryForObject("select amount from accounts where acid=?", new Object[] {craccid},Integer.class);
 		
 		int newamt=oldamount+amt;
 		
 		NamedParameterJdbcTemplate namedJdbc=new NamedParameterJdbcTemplate(dataSource);
 		MapSqlParameterSource mps=new MapSqlParameterSource();
 		mps.addValue("newamt",newamt);
-		mps.addValue("accid",craccid);
+		mps.addValue("acid",craccid);
 		
-		namedJdbc.update("update accounts set amount=:newamt where accid=:accid",mps);
+		namedJdbc.update("update accounts set amount=:newamt where acid=:acid",mps);
 		
 	}
 
@@ -30,7 +30,7 @@ public class MoneyTransferBeanImpl implements MoneyTransferBean {
 	public void doDebit(int draccid, int amt) throws Exception {
 		JdbcTemplate jdbc=new JdbcTemplate(dataSource);
 		int newamt=0;
-		Integer oldamount=jdbc.queryForObject("select amount from accounts where accid=?", new Object[] {draccid},Integer.class);
+		Integer oldamount=jdbc.queryForObject("select amount from accounts where acid=?", new Object[] {draccid},Integer.class);
 		if(oldamount<amt) {
 			throw new InsufficientBalanceException("Need more money money money......");
 		}
@@ -41,9 +41,9 @@ public class MoneyTransferBeanImpl implements MoneyTransferBean {
 		NamedParameterJdbcTemplate namedJdbc=new NamedParameterJdbcTemplate(dataSource);
 		MapSqlParameterSource mps=new MapSqlParameterSource();
 		mps.addValue("newamt",newamt);
-		mps.addValue("accid",draccid);
+		mps.addValue("acid",draccid);
 		
-		namedJdbc.update("update accounts set amount=:newamt where accid=:accid",mps);
+		namedJdbc.update("update accounts set amount=:newamt where acid=:acid",mps);
 		
 	}
 
