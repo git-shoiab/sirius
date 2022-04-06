@@ -30,10 +30,12 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
 		<mapping class="hibersirius2022.Employee"/>
 		<mapping class="compkeypack.InvTrans"/>
+		<mapping class="onetomany.Student"/>
+		<mapping class="onetomany.Address"/>
     </session-factory>
 
 </hibernate-configuration>
