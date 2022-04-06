@@ -13,14 +13,14 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 //@NamedQuery(name="myquery1", query = "from Employee")
-//@NamedQueries({
-//		@NamedQuery (name = "myquery2", query="from Employee e where e.eid=6"),
-//		@NamedQuery (name = "myquery3", query="from Employee e where e.eid=?"),
-//		@NamedQuery (name = "myquery4", query="from Employee e where e.eid=:eid"),
-//		@NamedQuery (name = "myquery5", query="select e.ename from Employee e where e.eid=:eid"),
-//		@NamedQuery (name = "myquery6", query="select e.ename,e.esal from Employee e where e.eid=:eid"),
-//		}
-//		)
+@NamedQueries({
+		@NamedQuery (name = "myquery2", query="from Employee e where e.eid=2"),
+		@NamedQuery (name = "myquery3", query="from Employee e where e.eid=?"),
+		@NamedQuery (name = "myquery4", query="from Employee e where e.eid=:eid"),
+		@NamedQuery (name = "myquery5", query="select e.ename from Employee e where e.eid=:eid"),
+		@NamedQuery (name = "myquery6", query="select e.ename,e.esal from Employee e where e.eid=:eid"),
+		}
+		)
 @Entity//(name = "emp")
 @Table(name = "MYEMPLOYEE")
 public class Employee implements Comparable<Employee>,Serializable,Cloneable{
