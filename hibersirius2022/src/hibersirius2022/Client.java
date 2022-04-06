@@ -7,20 +7,18 @@ import org.hibernate.cfg.Configuration;
 
 public class Client {
 	public static void main(String[] args) {
-		Configuration cfg=new Configuration().configure();
-		
-		SessionFactory factory=cfg.buildSessionFactory();
 		
 		Employee emp=new Employee();
-		emp.setEid(100);
-		emp.setEname("ramu");
+		//emp.setEid(100);
+		emp.setEname("somu");
 		emp.setEsal(10000);
+		emp.setEpass("secret");
 		
-		Session session= factory.openSession();
+		Session session= HibernateUtility.getSession();
 		
 		session.save(emp);
 		
-		session.beginTransaction().commit();
+		HibernateUtility.closeSession(null);
 		
 		
 	}
