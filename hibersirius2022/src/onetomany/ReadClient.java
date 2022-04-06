@@ -21,3 +21,4 @@ public class ReadClient {
 		HibernateUtility.closeSession(null);
 	}
 }
+
