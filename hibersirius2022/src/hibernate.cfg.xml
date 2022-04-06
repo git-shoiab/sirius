@@ -32,10 +32,12 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
 
-		<mapping class="hibersirius2022.Employee"/>
+		<!-- mapping class="hibersirius2022.Employee"/ -->
 		<mapping class="compkeypack.InvTrans"/>
 		<mapping class="onetomany.Student"/>
 		<mapping class="onetomany.Address"/>
+		<mapping class="manytomany.Employee"/>
+		<mapping class="manytomany.Training"/>
     </session-factory>
 
 </hibernate-configuration>
