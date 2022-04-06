@@ -33,6 +33,7 @@
         <property name="hbm2ddl.auto">update</property>
 
 		<mapping class="hibersirius2022.Employee"/>
+		<mapping class="compkeypack.InvTrans"/>
     </session-factory>
 
 </hibernate-configuration>
